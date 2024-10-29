@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SearchBarHome extends StatelessWidget {
-  const SearchBarHome({super.key});
+
+  final String hint;
+
+  const SearchBarHome({super.key, required this.hint});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class SearchBarHome extends StatelessWidget {
               Icons.search,
               color: Color.fromRGBO(134, 134, 134, 1),
             ),
-            hintText: "What would you like to buy today",
+            hintText: hint,
             hintStyle: GoogleFonts.poppins(
               fontSize: 10,
               color: Color.fromRGBO(134, 134, 134, 1),

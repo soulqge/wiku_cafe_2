@@ -4,6 +4,34 @@ import 'package:google_fonts/google_fonts.dart';
 class AppbarHome extends StatelessWidget {
   const AppbarHome({super.key});
 
+  void _showLogoutConfirmation(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Colors.white,
+          title: Text("Logout", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+          content: Text("Are you sure you want to logout?", style: GoogleFonts.poppins()),
+          actions: <Widget>[
+            TextButton(
+              child: Text("No", style: GoogleFonts.poppins(color: Colors.grey)),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: Text("Yes", style: GoogleFonts.poppins(color: Colors.blue)),
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+                Navigator.pushNamed(context, '/login'); // Navigate to login
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,7 +49,8 @@ class AppbarHome extends StatelessWidget {
             children: [
               Text(
                 "Good Afternoon!",
-                style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[600]),
+                style:
+                    GoogleFonts.poppins(fontSize: 14, color: Colors.grey[600]),
               ),
               Text(
                 "Andi",
@@ -34,17 +63,14 @@ class AppbarHome extends StatelessWidget {
             ],
           ),
           Spacer(),
-          Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.grey[200],
-            ),
-            padding: EdgeInsets.all(8),
-            child: Icon(
-              Icons.arrow_forward,
-              color: Colors.blue,
-            ),
-          ),
+          IconButton(
+              onPressed: () {
+                _showLogoutConfirmation(context);
+              },
+              icon: Icon(
+                Icons.logout_outlined,
+                color: Colors.blue,
+              )),
         ],
       ),
     );

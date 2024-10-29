@@ -7,6 +7,9 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController usernameController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -18,27 +21,53 @@ class LoginPage extends StatelessWidget {
               Text(
                 "Wikusama",
                 style: GoogleFonts.poppins(
-                    fontSize: 40,
-                    color: Color.fromRGBO(45, 133, 255, 1),
-                    fontWeight: FontWeight.w600),
+                  fontSize: 40,
+                  color: Color.fromRGBO(45, 133, 255, 1),
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               SizedBox(height: 44),
-              Formbox(hintForm: "User :"),
-              Formbox(hintForm: "Password :"),
+              Formbox(
+                hintForm: "Username :",
+                controller: usernameController, 
+              ),
+              Formbox(
+                hintForm: "Password :",
+                controller: passwordController, 
+                obscureText: true, 
+              ),
               SizedBox(height: 44),
               Container(
                 width: 132,
                 height: 45,
                 child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromRGBO(45, 133, 255, 1),
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20))),
-                    onPressed: () {
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromRGBO(45, 133, 255, 1),
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  onPressed: () {
+                    String username = usernameController.text;
+                    String password = passwordController.text;
+                    if (username == 'kasir' && password == '12345678') {
                       Navigator.pushNamed(context, '/home');
-                    },
-                    child: Text("Login")),
+                    } if (username == 'admin' && password == '12345678') {
+                      Navigator.pushNamed(context, '/home_admin');
+                    }else if (username == 'manager' && password == '12345678') {
+                      Navigator.pushNamed(context, '/home_manager');
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text('Invalid username or password'),
+                          backgroundColor: Colors.red,
+                        ),
+                      );
+                    }
+                  },
+                  child: Text("Login"),
+                ),
               ),
               Spacer(),
             ],

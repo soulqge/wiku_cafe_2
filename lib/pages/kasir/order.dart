@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:ukk_andi/components/navbar.dart';
+import 'package:ukk_andi/pages/kasir/invoice.dart';
 
 class OrderPage extends StatefulWidget {
   final String itemName;
@@ -244,7 +245,21 @@ class _OrderPageState extends State<OrderPage> {
                     backgroundColor: Colors.blue,
                     foregroundColor: Colors.white,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => InvoicePage(
+                                itemName: widget.itemName,
+                                image: widget.image,
+                                price: widget.price,
+                                quantity: quantity,
+                                total: total,
+                                tax: tax,
+                                subtotal: subtotal,
+                              )),
+                    );
+                  },
                   child: Text(
                     "Bayar",
                     style: GoogleFonts.poppins(

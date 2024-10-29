@@ -19,7 +19,6 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
     decimalDigits: 0,
   );
 
-  // Variables to store selected options
   String selectedCupSize = "Besar";
   String selectedIce = "60%";
   String selectedSugar = "60%";

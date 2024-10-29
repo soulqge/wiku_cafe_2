@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ukk_andi/pages/order.dart';
+import 'package:ukk_andi/pages/kasir/order.dart';
 
 class KeranjangButton extends StatelessWidget {
   final String itemName;

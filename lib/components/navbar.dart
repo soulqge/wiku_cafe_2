@@ -19,10 +19,8 @@ class _BottomNavKasirState extends State<BottomNavKasir> {
     });
     if (index == 0) {
       Navigator.pushReplacementNamed(context, '/home');
-    } else if (index == 1) {
-      Navigator.pushReplacementNamed(context, '/order');
-    }
-    else if (index == 2) {
+    } 
+    else if (index == 1) {
       Navigator.pushReplacementNamed(context, '/history');
     }
   }
@@ -38,10 +36,6 @@ class _BottomNavKasirState extends State<BottomNavKasir> {
         BottomNavigationBarItem(
           icon: Icon(Icons.home_outlined,),
           label: 'Home'
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.shopping_bag_outlined),
-          label: 'Order'
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.history, ),

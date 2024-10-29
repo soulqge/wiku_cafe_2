@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Formbox extends StatelessWidget {
-  final String hintForm;
-  final TextEditingController controller; // Controller for input handling
-  final bool obscureText; // Optional: To handle password fields
+class FormboxAdmin extends StatelessWidget {
 
-  const Formbox({
-    super.key,
-    required this.hintForm,
-    required this.controller,
-    this.obscureText = false, // Default to false
-  });
+  final String hintForm;
+
+  const FormboxAdmin({super.key, required this.hintForm});
 
   @override
   Widget build(BuildContext context) {
@@ -29,33 +23,30 @@ class Formbox extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
           child: TextField(
-            controller: controller,
-            obscureText: obscureText,
-            cursorColor: Color.fromRGBO(45, 133, 255, 1),
+            cursorColor: Color.fromRGBO(27, 174, 118, 1),
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(
-                  color: Color.fromRGBO(45, 133, 255, 1),
+                  color: Color.fromRGBO(27, 174, 118, 1),
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(
-                  color: Color.fromRGBO(45, 133, 255, 1),
+                  color: Color.fromRGBO(27, 174, 118, 1),
                   width: 2.0,
                 ),
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(
-                  color: Color.fromRGBO(45, 133, 255, 1),
+                  color: Color.fromRGBO(27, 174, 118, 1),
                 ),
               ),
             ),
           ),
-        ),
-        SizedBox(height: 10),
+        )
       ],
     );
   }

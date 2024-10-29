@@ -4,8 +4,8 @@ import 'package:intl/intl.dart';
 import 'package:ukk_andi/components/appbar_home.dart';
 import 'package:ukk_andi/components/navbar.dart';
 import 'package:ukk_andi/components/search_bar.dart';
-import 'package:ukk_andi/pages/detail_menu.dart';
-import 'package:ukk_andi/pages/food_detail.dart';
+import 'package:ukk_andi/pages/kasir/detail_menu.dart';
+import 'package:ukk_andi/pages/kasir/food_detail.dart';
 
 final List<Map<String, dynamic>> drinkItems = [
   {
@@ -61,14 +61,14 @@ final List<Map<String, dynamic>> foodItems = [
   },
 ];
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomePageKasir extends StatefulWidget {
+  const HomePageKasir({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePageKasir> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePageKasir> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               AppbarHome(),
-              SearchBarHome(),
+              SearchBarHome(hint: 'What would you like to buy today?',),
               PreferredSize(
                 preferredSize: Size.fromHeight(48.0),
                 child: TabBar(
