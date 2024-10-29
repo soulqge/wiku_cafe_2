@@ -18,7 +18,7 @@ class _TransaksiAdminPageState extends State<TransaksiAdminPage> {
     {"id": "rUyzQQsBFS", "name": "Makanan", "status": "Belum Lunas"},
     {"id": "68ac1qeaXO", "name": "Makanan", "status": "Belum Lunas"},
     {"id": "fnYS7kI4tG", "name": "Makanan", "status": "Belum Lunas"},
-  ];
+  ]; // data belum lunas
 
   final List<Map<String, dynamic>> sudahLunas = [
     {"id": "Zz9LB61SRT", "name": "Minuman", "status": "Lunas"},
@@ -26,7 +26,7 @@ class _TransaksiAdminPageState extends State<TransaksiAdminPage> {
     {"id": "kjsB2tocwk", "name": "Minuman", "status": "Lunas"},
     {"id": "Pj9a88XcDp", "name": "Minuman", "status": "Lunas"},
     {"id": "mHTx3gRapc", "name": "Minuman", "status": "Lunas"},
-  ];
+  ]; // data sudah lunas
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class _TransaksiAdminPageState extends State<TransaksiAdminPage> {
               child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: Column(
-                  children: [AppbarAdmin(title: "Transaksi")],
+                  children: [AppbarAdmin(title: "Transaksi")], // custom components
                 ),
               ),
             ),
@@ -57,14 +57,14 @@ class _TransaksiAdminPageState extends State<TransaksiAdminPage> {
             Expanded(
               child: TabBarView(
                 children: [
-                  buildMenuList(sudahLunas),
-                  buildMenuList(belumLunas)
+                  buildMenuList(sudahLunas), // custom widgets
+                  buildMenuList(belumLunas) // custom widgets
                 ],
               ),
             ),
           ],
         ),
-        bottomNavigationBar: BottomNavAdmin(selectedItem: 4),
+        bottomNavigationBar: BottomNavAdmin(selectedItem: 4), // custom navbar
       ),
     );
   }

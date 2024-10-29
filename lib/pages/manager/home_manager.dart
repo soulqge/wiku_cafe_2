@@ -18,7 +18,7 @@ class HomeManagerPage extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
-                  AppbarAdmin(title: "Dashboard"),
+                  AppbarAdmin(title: "Dashboard"), // custom components
                 ],
               ),
             ),
@@ -30,19 +30,19 @@ class HomeManagerPage extends StatelessWidget {
                 ManagerInformation(
                     title: "Total User", 
                     total: 8, 
-                    route: '/user_manager'),
+                    route: '/user_manager'), // custom components
                 Expanded(child: Container()),
                 ManagerInformation(
                     title: "Total Transaksi",
                     total: 10,
-                    route: '/transaki_manager'),
+                    route: '/transaki_manager'), // custom components
               ],
             ),
           ),
           SizedBox(height: 44),
         ],
       ),
-      bottomNavigationBar: BottomNavManager(selectedItem: 0),
+      bottomNavigationBar: BottomNavManager(selectedItem: 0), // custom navbar
     );
   }
 }

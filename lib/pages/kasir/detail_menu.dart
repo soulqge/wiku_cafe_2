@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:ukk_andi/components/keranjang_button.dart';
 
 class DetailMenuPage extends StatefulWidget {
-  final Map<String, dynamic> item;
+  final Map<String, dynamic> item; // nyimen data yang dipindah dari halaman sebelumnya
 
   DetailMenuPage({required this.item});
 
@@ -17,21 +17,21 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
     locale: 'id_ID',
     symbol: 'Rp ',
     decimalDigits: 0,
-  );
+  ); //format rupiah
 
   String selectedCupSize = "Besar";
   String selectedIce = "60%";
   String selectedSugar = "60%";
   int basePrice = 0;
   int quantity = 1;
-  int totalPrice = 0;
+  int totalPrice = 0; // hal yang dipilih default
 
   @override
   void initState() {
     super.initState();
     basePrice = widget.item['price'];
     totalPrice = (basePrice + _getCupSizePrice(selectedCupSize)) * quantity;
-  }
+  } // refresh UI
 
   int _getCupSizePrice(String cupSize) {
     switch (cupSize) {
@@ -43,21 +43,21 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
         return 4000;
       default:
         return 0;
-    }
+    } // kalau beda ukuran beda harga
   }
 
   void _updateTotalPrice() {
     setState(() {
       totalPrice = (basePrice + _getCupSizePrice(selectedCupSize)) * quantity;
     });
-  }
+  } // update harga total
 
   void _incrementQuantity() {
     setState(() {
       quantity++;
       _updateTotalPrice();
     });
-  }
+  } // tambah jumlah
 
   void _decrementQuantity() {
     if (quantity > 1) {
@@ -65,7 +65,7 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
         quantity--;
         _updateTotalPrice();
       });
-    }
+    } // kurang jumlah
   }
 
   @override
@@ -131,7 +131,7 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                           selectedCupSize = value;
                           _updateTotalPrice();
                         });
-                      },
+                      }, // custom widget
                     ),
                     SizedBox(height: 16),
                     _buildOptionsSection(
@@ -142,7 +142,7 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                         setState(() {
                           selectedIce = value;
                         });
-                      },
+                      }, // custom widget
                     ),
                     SizedBox(height: 16),
                     _buildOptionsSection(
@@ -152,7 +152,7 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
                       onOptionSelected: (value) {
                         setState(() {
                           selectedSugar = value;
-                        });
+                        }); // custom widget
                       },
                     ),
                     SizedBox(height: 16),

@@ -18,7 +18,7 @@ class _MejaAdminPageState extends State<MejaAdminPage> {
     {"number": "3", "status": "Tersedia"},
     {"number": "4", "status": "Terisi"},
     {"number": "5", "status": "Tersedia"},
-  ];
+  ]; // data meja
 
   void _deleteTable(int index) {
     setState(() {
@@ -27,7 +27,7 @@ class _MejaAdminPageState extends State<MejaAdminPage> {
         SnackBar(content: Text('Meja deleted')),
       );
     });
-  }
+  } // fungsi hapus meja
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class _MejaAdminPageState extends State<MejaAdminPage> {
               padding: EdgeInsets.all(20),
               child: Column(
                 children: [
-                  AppbarAdmin(title: "Meja"),
+                  AppbarAdmin(title: "Meja"), // custom components
                 ],
               ),
             ),
@@ -128,11 +128,11 @@ class _MejaAdminPageState extends State<MejaAdminPage> {
                   ),
                 );
               },
-            ),
+            ), // nampilin kontainer sesuai jumlah data
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavAdmin(selectedItem: 2),
+      bottomNavigationBar: BottomNavAdmin(selectedItem: 2), // custom navbar
     );
   }
 }

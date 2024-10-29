@@ -19,7 +19,7 @@ class InvoicePage extends StatefulWidget {
       required this.quantity,
       required this.total,
       required this.tax,
-      required this.subtotal});
+      required this.subtotal}); // nyimen data yang dipindah dari halaman sebelumnya
 
   @override
   State<InvoicePage> createState() => _InvoicePageState();
@@ -30,7 +30,7 @@ class _InvoicePageState extends State<InvoicePage> {
     locale: 'id_ID',
     symbol: 'Rp ',
     decimalDigits: 0,
-  );
+  ); //format rupiah
 
   String namaKasir = "Andi";
   String namaPelanggan = "Eko";
@@ -114,7 +114,7 @@ class _InvoicePageState extends State<InvoicePage> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8))),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/home');
+                      Navigator.pushNamed(context, '/home'); // pindah ke home lagi
                     },
                     child: Text(
                       "Selesai",

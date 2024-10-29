@@ -31,7 +31,7 @@ final List<Map<String, dynamic>> drinkItems = [
     "description": "Minuman",
     "price": 12000,
     "image": "assets/gambar4.png"
-  },
+  }, // data minuman
 ];
 
 final List<Map<String, dynamic>> foodItems = [
@@ -58,7 +58,7 @@ final List<Map<String, dynamic>> foodItems = [
     "description": "Makanan",
     "price": 20000,
     "image": "assets/gambar8.png"
-  },
+  }, //data makanan
 ];
 
 class HomePageKasir extends StatefulWidget {
@@ -78,8 +78,8 @@ class _HomePageState extends State<HomePageKasir> {
         body: SafeArea(
           child: Column(
             children: [
-              AppbarHome(),
-              SearchBarHome(hint: 'What would you like to buy today?',),
+              AppbarHome(), // custom components
+              SearchBarHome(hint: 'What would you like to buy today?',), // custom components
               PreferredSize(
                 preferredSize: Size.fromHeight(48.0),
                 child: TabBar(
@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePageKasir> {
               Expanded(
                 child: TabBarView(
                   children: [
-                    buildMenuList(drinkItems),
+                    buildMenuList(drinkItems), // custom widgets
                     buildMenuList(foodItems),
                   ],
                 ),
@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePageKasir> {
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavKasir(selectedItem: 0),
+        bottomNavigationBar: BottomNavKasir(selectedItem: 0), // custom navbar
       ),
     );
   }
@@ -111,9 +111,9 @@ class _HomePageState extends State<HomePageKasir> {
 
 Widget buildMenuList(List<Map<String, dynamic>> items) {
   final NumberFormat currencyFormat =
-      NumberFormat.currency(locale: 'id_ID', symbol: 'Rp. ', decimalDigits: 0);
+      NumberFormat.currency(locale: 'id_ID', symbol: 'Rp. ', decimalDigits: 0); // format rupiah
 
-  return GridView.builder(
+  return GridView.builder( //biar bisa buat row sesuai jumlah data
     padding: const EdgeInsets.all(16.0),
     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
       crossAxisCount: 2,
@@ -137,8 +137,8 @@ Widget buildMenuList(List<Map<String, dynamic>> items) {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => FoodDetailPage(item: item),
-              ),
+                builder: (context) => FoodDetailPage(item: item), 
+              ), //mindahin data ke halaman berikutnya
             );
           }
         },

@@ -29,7 +29,7 @@ class _UserManagerPageState extends State<UserManagerPage> {
     User(name: "Githan", role: "Manager", number: 16),
     User(name: "Ata", role: "Admin", number: 23),
     User(name: "Asep", role: "Kasir", number: 8),
-  ];
+  ]; //data user
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class _UserManagerPageState extends State<UserManagerPage> {
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
-                  AppbarAdmin(title: "User"),
+                  AppbarAdmin(title: "User"), // custom components
                 ],
               ),
             ),

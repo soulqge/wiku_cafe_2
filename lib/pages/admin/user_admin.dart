@@ -28,7 +28,7 @@ class _UserAdminPageState extends State<UserAdminPage> {
     User(name: "Githan", role: "Manager"),
     User(name: "Ata", role: "Admin"),
     User(name: "Asep", role: "Admin"),
-  ];
+  ]; // data user
 
   // Method to delete a user
   void _deleteUser(int index) {
@@ -51,7 +51,7 @@ class _UserAdminPageState extends State<UserAdminPage> {
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
-                  AppbarAdmin(title: "User"),
+                  AppbarAdmin(title: "User"), // custom components
                 ],
               ),
             ),
@@ -99,8 +99,8 @@ class _UserAdminPageState extends State<UserAdminPage> {
                                 showModalBottomSheet(
                                   context: context,
                                   builder: (context) =>
-                                      BottomSheetAdmin(title: "Update User"),
-                                );
+                                      BottomSheetAdmin(title: "Update User"), // custom components
+                                ); 
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.green,
@@ -115,7 +115,7 @@ class _UserAdminPageState extends State<UserAdminPage> {
                             SizedBox(width: 10),
                             ElevatedButton(
                               onPressed: () {
-                                _deleteUser(index);
+                                _deleteUser(index); // custom function
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.red,
@@ -138,7 +138,7 @@ class _UserAdminPageState extends State<UserAdminPage> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavAdmin(selectedItem: 1),
+      bottomNavigationBar: BottomNavAdmin(selectedItem: 1), // custom navbar
     );
   }
 }

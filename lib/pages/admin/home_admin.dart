@@ -21,7 +21,7 @@ class HomeAdminPage extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
-                  AppbarAdmin(title: "Dashboard"),
+                  AppbarAdmin(title: "Dashboard"), // custom components
                 ],
               ),
             ),
@@ -34,13 +34,13 @@ class HomeAdminPage extends StatelessWidget {
                   title: "Total User",
                   total: 8,
                   bottomSheetContent: BottomSheetAdmin(title: "Tambah User")
-                ),
+                ), // custom components
                 Expanded(child: Container()),
                 Information(
                   title: "Total Meja",
                   total: 5,
                   bottomSheetContent: TambahUpdateMeja(title: 'Tambah Meja',)
-                )
+                ) // custom components
               ],
             ),
           ),
@@ -53,19 +53,19 @@ class HomeAdminPage extends StatelessWidget {
                   title: "Total Transaksi",
                   total: 10,
                   bottomSheetContent: Center(child: Text("Lihat Transaksi")),
-                ),
+                ), // custom components
                 Expanded(child: Container()),
                 Information(
                   title: "Total Menu",
                   total: 8,
                   bottomSheetContent: TambahUpdateMenu(title: 'Tambah Menu',)
-                )
+                ) // custom components
               ],
             ),
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavAdmin(selectedItem: 0),
+      bottomNavigationBar: BottomNavAdmin(selectedItem: 0), // custom navbar
     );
   }
 }

@@ -18,7 +18,7 @@ class _MenuAdminPageState extends State<MenuAdminPage> {
     locale: 'id_ID',
     symbol: 'Rp ',
     decimalDigits: 0,
-  );
+  ); // format rupiah
 
   final List<Map<String, dynamic>> drinkItems = [
     {
@@ -45,7 +45,7 @@ class _MenuAdminPageState extends State<MenuAdminPage> {
       "price": 12000,
       "image": "assets/gambar4.png"
     },
-  ];
+  ]; // data minuman
 
   final List<Map<String, dynamic>> foodItems = [
     {
@@ -72,7 +72,7 @@ class _MenuAdminPageState extends State<MenuAdminPage> {
       "price": 20000,
       "image": "assets/gambar8.png"
     },
-  ];
+  ]; // data makanan
 
   void _deleteItem(List<Map<String, dynamic>> items, int index) {
     setState(() {
@@ -81,7 +81,7 @@ class _MenuAdminPageState extends State<MenuAdminPage> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('Item deleted')),
     );
-  }
+  } // hapus data
 
   @override
   Widget build(BuildContext context) {
@@ -112,14 +112,14 @@ class _MenuAdminPageState extends State<MenuAdminPage> {
             Expanded(
               child: TabBarView(
                 children: [
-                  buildMenuList(drinkItems, _deleteItem,  currencyFormat),
-                  buildMenuList(foodItems, _deleteItem,  currencyFormat)
+                  buildMenuList(drinkItems, _deleteItem,  currencyFormat), // custom widgets
+                  buildMenuList(foodItems, _deleteItem,  currencyFormat) // custom widgets
                 ],
               ),
             ),
           ],
         ),
-        bottomNavigationBar: BottomNavAdmin(selectedItem: 3),
+        bottomNavigationBar: BottomNavAdmin(selectedItem: 3), // custom navbar
       ),
     );
   }
@@ -185,7 +185,7 @@ Widget buildMenuList(List<Map<String, dynamic>> items, Function deleteItem, Numb
                       onPressed: () {
                         showModalBottomSheet(
                           context: context,
-                          builder: (context) => TambahUpdateMenu(title: "Update Menu"),
+                          builder: (context) => TambahUpdateMenu(title: "Update Menu"), // custom components
                         );
                       },
                       style: ElevatedButton.styleFrom(

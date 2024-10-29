@@ -5,7 +5,7 @@ import 'package:ukk_andi/components/catatan_form.dart';
 import 'package:ukk_andi/components/keranjang_button.dart';
 
 class FoodDetailPage extends StatefulWidget {
-  final Map<String, dynamic> item;
+  final Map<String, dynamic> item; // nyimpen data yang ada di pindah dari home
 
   FoodDetailPage({required this.item});
 
@@ -18,7 +18,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
     locale: 'id_ID',
     symbol: 'Rp ',
     decimalDigits: 0,
-  );
+  ); // buat format harga
 
   int quantity = 1;
   int totalPrice = 0;
@@ -27,20 +27,20 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
   void initState() {
     super.initState();
     totalPrice = widget.item['price'] * quantity;
-  }
+  } // buat refresh data
 
   void _updateTotalPrice() {
     setState(() {
       totalPrice = widget.item['price'] * quantity;
     });
-  }
+  } //update harga total
 
   void _incrementQuantity() {
     setState(() {
       quantity++;
       _updateTotalPrice();
     });
-  }
+  } //tambah jumlah barang
 
   void _decrementQuantity() {
     if (quantity > 1) {
@@ -48,7 +48,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
         quantity--;
         _updateTotalPrice();
       });
-    }
+    } // kurangin jumlah barang
   }
 
   @override
@@ -158,7 +158,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                       itemName: widget.item['name'],
                       quantity: quantity,
                       price: totalPrice,
-                      image: widget.item['image'])
+                      image: widget.item['image']) // mindah data ke halaman berikutnya
                 ],
               ),
             ),

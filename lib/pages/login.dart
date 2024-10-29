@@ -7,8 +7,8 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController usernameController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
+    final TextEditingController usernameController = TextEditingController(); // buat nyimpen input username
+    final TextEditingController passwordController = TextEditingController(); // buat nyimpen input password
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -30,7 +30,7 @@ class LoginPage extends StatelessWidget {
               Formbox(
                 hintForm: "Username :",
                 controller: usernameController, 
-              ),
+              ), // custom components
               Formbox(
                 hintForm: "Password :",
                 controller: passwordController, 
@@ -65,7 +65,7 @@ class LoginPage extends StatelessWidget {
                         ),
                       );
                     }
-                  },
+                  }, // fungsi buat login dan hlaman yang dituju
                   child: Text("Login"),
                 ),
               ),

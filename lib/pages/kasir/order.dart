@@ -15,7 +15,7 @@ class OrderPage extends StatefulWidget {
     required this.quantity,
     required this.price,
     required this.image,
-  });
+  }); // nyimen data yang dipindah dari halaman sebelumnya
 
   @override
   State<OrderPage> createState() => _OrderPageState();
@@ -26,7 +26,7 @@ class _OrderPageState extends State<OrderPage> {
     locale: 'id_ID',
     symbol: 'Rp ',
     decimalDigits: 0,
-  );
+  ); // format rupiah
 
   late int quantity;
 
@@ -34,23 +34,23 @@ class _OrderPageState extends State<OrderPage> {
   void initState() {
     super.initState();
     quantity = widget.quantity;
-  }
+  } // refresh UI
 
-  int get subtotal => widget.price * quantity;
-  double get tax => subtotal * 0.1;
-  double get total => subtotal + tax;
+  int get subtotal => widget.price * quantity; // total harga
+  double get tax => subtotal * 0.1; // pajak
+  double get total => subtotal + tax; // total harga + pajak
 
   void incrementQuantity() {
     setState(() {
       quantity++;
     });
-  }
+  } // tambah jumlah
 
   void decrementQuantity() {
     setState(() {
       if (quantity > 1) quantity--;
     });
-  }
+  } // kurangin jumlah
 
   @override
   Widget build(BuildContext context) {
@@ -257,7 +257,7 @@ class _OrderPageState extends State<OrderPage> {
                                 total: total,
                                 tax: tax,
                                 subtotal: subtotal,
-                              )),
+                              )), // mindah data ke halaman berikut nya
                     );
                   },
                   child: Text(
@@ -272,7 +272,7 @@ class _OrderPageState extends State<OrderPage> {
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavKasir(selectedItem: 1),
+        bottomNavigationBar: BottomNavKasir(selectedItem: 1), // custom navbar
       ),
     );
   }

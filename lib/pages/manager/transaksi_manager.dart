@@ -18,7 +18,7 @@ class _TransaksiManagerPagePageState extends State<TransaksiManagerPage> {
     {"id": "rUyzQQsBFS", "name": "Makanan", "status": "Belum Lunas"},
     {"id": "68ac1qeaXO", "name": "Makanan", "status": "Belum Lunas"},
     {"id": "fnYS7kI4tG", "name": "Makanan", "status": "Belum Lunas"},
-  ];
+  ]; //data belum lunas
 
   final List<Map<String, dynamic>> sudahLunas = [
     {"id": "Zz9LB61SRT", "name": "Minuman", "status": "Lunas"},
@@ -26,7 +26,7 @@ class _TransaksiManagerPagePageState extends State<TransaksiManagerPage> {
     {"id": "kjsB2tocwk", "name": "Minuman", "status": "Lunas"},
     {"id": "Pj9a88XcDp", "name": "Minuman", "status": "Lunas"},
     {"id": "mHTx3gRapc", "name": "Minuman", "status": "Lunas"},
-  ];
+  ]; // data lunas
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +42,9 @@ class _TransaksiManagerPagePageState extends State<TransaksiManagerPage> {
                 padding: EdgeInsets.all(20),
                 child: Column(
                   children: [
-                    AppbarAdmin(title: "Transaksi"),
+                    AppbarAdmin(title: "Transaksi"), // custom components
                     SizedBox(height: 10),
-                    SearchBarHome(hint: 'Search',),
+                    SearchBarHome(hint: 'Search',), // custom components
                     SizedBox(
                       height: 24,
                     ),
@@ -99,14 +99,14 @@ class _TransaksiManagerPagePageState extends State<TransaksiManagerPage> {
             Expanded(
               child: TabBarView(
                 children: [
-                  buildMenuList(sudahLunas),
-                  buildMenuList(belumLunas)
+                  buildMenuList(sudahLunas), // custom widgets
+                  buildMenuList(belumLunas)  // custom widgets
                 ],
               ),
             ),
           ],
         ),
-        bottomNavigationBar: BottomNavManager(selectedItem: 2),
+        bottomNavigationBar: BottomNavManager(selectedItem: 2), // custom navbar
       ),
     );
   }
